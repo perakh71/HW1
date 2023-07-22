@@ -1,0 +1,62 @@
+---
+title: "HW 1"
+author: "Orit Shmulevich"
+date: "2023-07-14"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+1.	 Write a loop that calculates 12-factorial (myFactorial)
+```{r}
+
+myFactorial <- 1
+for(i in (1:11))
+{
+  myFactorial <- myFactorial * (i + 1)
+}
+print(myFactorial)
+
+```
+2.	seqV - Show how to create a numeric vector that contains the sequence from 20 to 50 by 5.
+attached are 2 ways of doing it. 
+```{r}
+seqV <-  as.numeric(c(20,25,30,35,40,45,50))
+seqV
+```
+```{r}
+mySeqV <- seq(20, 50, 5)
+mySeqV
+```
+
+3.	Create the function “quad” that takes a trio of input numbers a, b, and c and solve the quadratic equation.  The function should print as output the two solutions.  Please run and test your answer for (1,2,1), (1,6,5) and (1,1,1).
+
+y = ax^2 + bx + c 
+
+```{r}
+quad <- function(a,b,c)
+{
+  if (b**2 - (4*a*c) >= 0)
+  {
+  firstNum <- (-b + (b**2 - (4*a*c))^0.5) / (2*a)
+  secondNum <- (-b - (b**2 - (4*a*c))^0.5) / (2*a)
+  cat(firstNum, secondNum)
+  }  
+  else
+  {
+  myString <- "bad data!"
+  print ( myString)
+  }
+}
+
+quad(1,2,1)
+quad(1,6,5)
+quad(1,1,1)
+```
+
+```
+
